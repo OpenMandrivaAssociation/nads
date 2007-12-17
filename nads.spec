@@ -16,7 +16,6 @@ Group:		System/Servers
 BuildRequires:	automake1.7
 BuildRequires:	autoconf2.5
 #Requires:	squid >= 2.5
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 N.A.D.S. is an HTTP URL normalization library. It takes HTTP URIs
