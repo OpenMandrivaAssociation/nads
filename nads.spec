@@ -13,9 +13,9 @@ URL:		http://www.scaramanga.co.uk
 License:	GPL
 Source0:	%{name}-%{version}.tar.bz2
 Group:		System/Servers
-BuildRequires:	automake1.7
-BuildRequires:	autoconf2.5
-#Requires:	squid >= 2.5
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
@@ -50,23 +50,19 @@ This package contains the static %{name} library and its header
 files.
 
 %prep
-
 %setup -q
 
 %build
-export WANT_AUTOCONF_2_5=1
-rm -f configure; aclocal-1.7 && autoconf --force && autoheader
-
+./autogen.sh
 %configure2_5x \
     --enable-static \
     --enable-shared
-
-%make
+%make LIBTOOL=%{_bindir}/libtool
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-%makeinstall
+%makeinstall_std
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
