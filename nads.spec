@@ -4,6 +4,7 @@
 
 %define	major	0
 %define libname	%mklibname nads %{major}
+%define develname %mklibname -d nads
 
 Summary:	Normalized Attack Detection System
 Name:		%{name}
@@ -34,13 +35,14 @@ in any form and converts them to a form suitable for comparison,
 or for matching against attack descriptions (signatures) in
 intrusion detection / prevention systems.
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Static library and header files for the %{name} library
 Group:		Development/C
 Provides:	lib%{name}-devel
 Requires:	%{libname} = %{version}-%{release}
+Obsoletes:	%mklibname -d nads 0
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 N.A.D.S. is an HTTP URL normalization library. It takes HTTP URIs
 in any form and converts them to a form suitable for comparison,
 or for matching against attack descriptions (signatures) in
@@ -83,13 +85,11 @@ files.
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_libdir}/*.la
-
-
