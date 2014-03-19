@@ -10,6 +10,7 @@ License:	GPLv2+
 Group:		System/Servers
 Url:		http://www.scaramanga.co.uk
 Source0:	%{name}-%{version}.tar.bz2
+BuildRequires:	libtool
 
 %description
 N.A.D.S. is an HTTP URL normalization library. It takes HTTP URIs
