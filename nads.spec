@@ -5,7 +5,7 @@
 Summary:	Normalized Attack Detection System
 Name:		nads
 Version:	0.3
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		System/Servers
 Url:		http://www.scaramanga.co.uk
