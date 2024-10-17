@@ -8,7 +8,7 @@ Version:	0.3
 Release:	7
 License:	GPLv2+
 Group:		System/Servers
-Url:		http://www.scaramanga.co.uk
+Url:		https://www.scaramanga.co.uk
 Source0:	%{name}-%{version}.tar.bz2
 BuildRequires:	libtool
 
