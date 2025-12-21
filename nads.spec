@@ -10,6 +10,11 @@ License:	GPLv2+
 Group:		System/Servers
 Url:		https://www.scaramanga.co.uk
 Source0:	%{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libtool
 
 %description
